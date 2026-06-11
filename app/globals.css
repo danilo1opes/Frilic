@@ -25,4 +25,17 @@
   /* Fontes */
   --font-heading: var(--font-cormorant);
   --font-body: var(--font-dm-sans);
+
+  /* Animações */
+  --animate-flow: flow 28s linear infinite;
+
+  @keyframes flow {
+    from {
+      transform: translateX(0);
+    }
+
+    to {
+      transform: translateX(-50%);
+    }
+  }
 }

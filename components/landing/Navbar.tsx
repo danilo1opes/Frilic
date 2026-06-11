@@ -28,7 +28,7 @@ export default function Navbar() {
 
   return (
     <>
-      {/* Barra de progresso */}
+      {/* Bar of progression */}
       <div className="fixed left-0 top-0 z-[60] h-0.5 w-full bg-transparent">
         <div
           className="h-full bg-accent transition-[width] duration-100 ease-linear"

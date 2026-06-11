@@ -39,7 +39,7 @@ export default function Header() {
       />
 
       {/* Content */}
-      <div className="relative z-2 mx-auto w-full">
+      <div className="relative z-2 mx-auto w-full max-w-[1160px]">
         <p className="mb-9 flex items-center gap-4 text-xs font-normal uppercase tracking-[0.12em] text-text-muted before:block before:h-px before:w-8 before:bg-text-muted before:content-['']">
           Frilic Growth System: Sistema de Aquisição
         </p>
@@ -57,17 +57,39 @@ export default function Header() {
         </p>
 
         {/* Buttons */}
-        <div className="mt-14 flex flex-col gap-5 sm:flex-row sm:items-center sm:gap-8">
+        <div
+          className="
+    mt-14
+    flex flex-col items-center
+    gap-5
+
+    sm:flex-row
+    sm:items-center
+    sm:justify-start
+    sm:gap-8
+  "
+        >
           <a
             href="#cta"
-            className="inline-block bg-text-primary px-10 py-4 text-center text-xs font-medium uppercase tracking-[0.12em] text-background transition-colors duration-200 hover:bg-white"
+            className="
+      inline-block bg-text-primary px-10 py-4
+      text-center text-xs font-medium uppercase tracking-[0.12em]
+      text-background transition-colors duration-200
+      hover:bg-white
+    "
           >
             Quero conhecer o sistema
           </a>
 
           <a
             href="#phases"
-            className="inline-block border-b border-border-light pb-0.5 text-xs font-normal uppercase tracking-[0.1em] text-text-secondary transition-colors duration-200 hover:text-text-primary"
+            className="
+      text-xs font-normal uppercase tracking-[0.1em]
+      text-text-secondary transition-colors duration-200
+      hover:text-text-primary
+
+      border-b border-border-light pb-0.5
+    "
           >
             Ver as 4 fases
           </a>
