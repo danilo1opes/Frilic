@@ -5,6 +5,7 @@ export default function Problem() {
     <section
       id="problem"
       className="border-b border-border py-20 lg:py-30 bg-background"
+      data-section="problem"
     >
       <div className="mx-auto max-w-[1160px] px-6 lg:px-10">
         {/*  Subtitle */}

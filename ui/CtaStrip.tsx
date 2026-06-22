@@ -57,7 +57,6 @@ export default function CtaStrip({
               bg-accent
               px-9
               py-4
-
               text-xs
               font-medium
               uppercase

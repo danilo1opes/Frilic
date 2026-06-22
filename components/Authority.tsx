@@ -5,6 +5,7 @@ export default function Authority() {
     <section
       id="authority"
       className="border-b border-border py-20 lg:py-30 bg-background"
+      data-section="authority"
     >
       <div className="mx-auto max-w-[1160px] px-6 lg:px-10">
         <div className="grid gap-16 lg:grid-cols-[5fr_4fr] lg:items-start lg:gap-20">

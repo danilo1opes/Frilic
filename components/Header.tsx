@@ -3,6 +3,7 @@ export default function Header() {
     <header
       id="hero"
       className="relative flex flex-col justify-end overflow-hidden border-b border-border bg-background px-6 pb-24 pt-36 lg:px-10"
+      data-section="hero"
     >
       {/* Grid animado */}
       <div

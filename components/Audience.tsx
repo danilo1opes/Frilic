@@ -5,6 +5,7 @@ export default function Audience() {
     <section
       id="audience"
       className="border-y border-border bg-surface py-20 lg:py-30 bg-background"
+      data-section="audience"
     >
       <div className="mx-auto max-w-[1160px] px-6 lg:px-10">
         <p className="mb-5 flex items-center gap-3 text-[10px] font-medium uppercase tracking-[0.2em] text-text-muted before:block before:h-px before:w-5 before:bg-text-muted before:content-['']">

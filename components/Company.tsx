@@ -5,6 +5,7 @@ export default function Company() {
     <section
       id="clients"
       className="overflow-hidden border-y border-border bg-background py-12"
+      data-section="clients"
     >
       {/* Subtext */}
       <div className="mb-8 text-center">

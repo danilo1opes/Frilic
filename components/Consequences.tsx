@@ -5,6 +5,7 @@ export default function Consequences() {
     <section
       id="consequences"
       className="border-y border-border bg-surface py-20 lg:py-30"
+      data-section="consequences"
     >
       <div className="mx-auto max-w-[1160px] px-6 lg:px-10">
         {/* Subtitle */}

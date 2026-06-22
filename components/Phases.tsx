@@ -5,6 +5,7 @@ export default function Phases() {
     <section
       id="phases"
       className="border-y border-border bg-surface py-20 lg:py-30"
+      data-section="phases"
     >
       <div className="mx-auto max-w-[1160px] px-6 lg:px-10">
         <div className="mb-20 flex flex-col gap-6 lg:flex-row lg:items-end lg:justify-between">
