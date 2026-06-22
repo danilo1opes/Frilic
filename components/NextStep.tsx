@@ -11,13 +11,15 @@ export default function NextStep() {
   return (
     <section
       id="cta"
+      data-section="cta"
+      aria-labelledby="next-step-title"
       className="
         relative overflow-hidden border-b border-border
         bg-background py-28 text-center lg:py-40
       "
-      data-section="cta"
     >
       <div
+        aria-hidden="true"
         className="
           absolute inset-0 opacity-[0.22]
           bg-[linear-gradient(var(--color-border)_1px,transparent_1px),linear-gradient(90deg,var(--color-border)_1px,transparent_1px)]
@@ -26,6 +28,7 @@ export default function NextStep() {
       />
 
       <div
+        aria-hidden="true"
         className="
           pointer-events-none absolute left-1/2 top-1/2
           h-[600px] w-[600px] -translate-x-1/2 -translate-y-1/2
@@ -45,6 +48,7 @@ export default function NextStep() {
         </p>
 
         <h2
+          id="next-step-title"
           className="
             mx-auto mb-7 max-w-[800px]
             font-heading text-[44px] font-light leading-[1.05]
@@ -56,10 +60,16 @@ export default function NextStep() {
           e mês ruim.
           <br />
           <span
-            key={currentIndex}
-            className=" block italic text-accent animate-[fadeUp_0.8s_ease]"
+            aria-live="polite"
+            aria-atomic="true"
+            className="block min-h-[1.1em] italic text-accent"
           >
-            {currentText}
+            <span
+              key={currentIndex}
+              className="block animate-[fadeUp_0.8s_ease]"
+            >
+              {currentText}
+            </span>
           </span>
         </h2>
 
@@ -79,12 +89,15 @@ export default function NextStep() {
           href="https://wa.me/558192974213"
           target="_blank"
           rel="noopener noreferrer"
+          aria-label="Falar com especialista da Frilic pelo WhatsApp"
           className="
             inline-block bg-text-primary px-10 py-4
             text-[12px] font-medium uppercase
             tracking-[0.12em] text-background
             transition-colors duration-200
             hover:bg-white
+            focus-visible:outline focus-visible:outline-2
+            focus-visible:outline-offset-4 focus-visible:outline-accent
           "
         >
           Falar com especialista via WhatsApp
@@ -96,7 +109,7 @@ export default function NextStep() {
             tracking-[0.06em] text-text-muted
           "
         >
-          Conversa gratuita — sem pressão — sem compromisso
+          Conversa gratuita, sem pressão, sem compromisso
         </p>
       </div>
     </section>

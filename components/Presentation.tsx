@@ -4,8 +4,9 @@ export default function Presentation() {
   return (
     <section
       id="presentation"
-      className="border-b border-border py-20 lg:py-30 bg-background"
       data-section="presentation"
+      aria-labelledby="presentation-title"
+      className="border-b border-border bg-background py-20 lg:py-30"
     >
       <div className="mx-auto max-w-[1160px] px-6 lg:px-10">
         <div className="grid gap-16 lg:grid-cols-[5fr_4fr] lg:items-center lg:gap-24">
@@ -14,7 +15,10 @@ export default function Presentation() {
               A solução
             </p>
 
-            <h2 className="font-heading text-4xl font-light leading-wide text-white sm:text-5xl lg:text-[58px]">
+            <h2
+              id="presentation-title"
+              className="font-heading text-4xl font-light leading-[1.05] text-white sm:text-5xl lg:text-[58px]"
+            >
               A Frilic não vende post
               <br />
               nem anúncio avulso.
@@ -51,24 +55,33 @@ export default function Presentation() {
             </div>
           </div>
 
-          <aside className="border border-border-light bg-surface p-10">
-            <p className="mb-7 text-[10px] font-medium uppercase tracking-[0.18em] text-text-muted">
+          <aside
+            aria-labelledby="presentation-aside-title"
+            className="border border-border-light bg-surface p-10"
+          >
+            <h3
+              id="presentation-aside-title"
+              className="mb-7 text-[10px] font-medium uppercase tracking-[0.18em] text-text-muted"
+            >
               O que você vai ter ao final
-            </p>
+            </h3>
 
-            <div className="space-y-5">
+            <ul className="space-y-5">
               {presentationItems.map((item) => (
-                <div key={item} className="flex items-start gap-4">
-                  <div className="mt-1 flex h-4 w-4 shrink-0 items-center justify-center border border-accent">
-                    <div className="h-1.5 w-1.5 bg-accent" />
-                  </div>
+                <li key={item} className="flex items-start gap-4">
+                  <span
+                    aria-hidden="true"
+                    className="mt-1 flex h-4 w-4 shrink-0 items-center justify-center border border-accent"
+                  >
+                    <span className="h-1.5 w-1.5 bg-accent" />
+                  </span>
 
                   <p className="text-sm leading-relaxed text-text-secondary">
                     {item}
                   </p>
-                </div>
+                </li>
               ))}
-            </div>
+            </ul>
           </aside>
         </div>
       </div>

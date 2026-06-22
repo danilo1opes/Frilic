@@ -8,7 +8,8 @@ export default function StickyBar() {
   const currentSection = useActiveSection();
 
   return (
-    <div
+    <aside
+      aria-label="Barra de navegação rápida"
       className={`
         fixed bottom-0 left-0 right-0 z-50
         border-t border-border-light
@@ -25,13 +26,20 @@ export default function StickyBar() {
           px-6 py-4 lg:px-10
         "
       >
-        <p className="text-text-secondary">
+        <p
+          className="
+            hidden text-sm text-text-secondary
+            sm:block
+          "
+        >
           <strong className="text-text-primary">Frilic Growth System</strong> —
           Sistema completo de aquisição em 4 fases
         </p>
 
         <div className="flex items-center gap-6">
           <span
+            aria-live="polite"
+            aria-label={`Seção atual: ${currentSection}`}
             className="
               text-[10px]
               uppercase
@@ -44,17 +52,26 @@ export default function StickyBar() {
 
           <a
             href="#cta"
+            aria-label="Ir para a seção Próximo passo"
             className="
               bg-accent px-8 py-4
-              text-[12px]
-              uppercase
-              tracking-[0.12em]
+              text-[12px] font-medium
+              uppercase tracking-[0.12em]
+              text-background
+
+              transition-opacity duration-200
+              hover:opacity-85
+
+              focus-visible:outline
+              focus-visible:outline-2
+              focus-visible:outline-offset-4
+              focus-visible:outline-accent
             "
           >
             Quero começar
           </a>
         </div>
       </div>
-    </div>
+    </aside>
   );
 }

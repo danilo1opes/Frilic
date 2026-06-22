@@ -4,12 +4,12 @@ export default function Risk() {
   return (
     <section
       id="risk"
-      className="border-y border-border bg-surface py-20 lg:py-30"
       data-section="risk"
+      aria-labelledby="risk-title"
+      className="border-y border-border bg-surface py-20 lg:py-30"
     >
       <div className="mx-auto max-w-[1160px] px-6 lg:px-10">
         <div className="grid items-center gap-12 lg:grid-cols-2 lg:gap-20">
-          {/* Left */}
           <div>
             <p
               className="
@@ -24,6 +24,7 @@ export default function Risk() {
             </p>
 
             <h2
+              id="risk-title"
               className="
                 font-heading text-4xl font-light leading-[1.05]
                 text-white sm:text-5xl lg:text-[58px]
@@ -68,11 +69,15 @@ export default function Risk() {
             </div>
           </div>
 
-          {/* Right */}
-          <div className="flex flex-col gap-px bg-border">
+          <div
+            className="flex flex-col gap-px bg-border"
+            role="list"
+            aria-label="Formas de reduzir o risco ao começar"
+          >
             {riskItems.map((item) => (
               <article
                 key={item.title}
+                role="listitem"
                 className="
                   group flex items-start gap-5
                   bg-surface px-7 py-6
@@ -80,7 +85,8 @@ export default function Risk() {
                   hover:bg-[#141414]
                 "
               >
-                <div
+                <span
+                  aria-hidden="true"
                   className="
                     mt-1 h-10 w-px shrink-0 bg-accent
                     transition-all duration-300

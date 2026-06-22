@@ -8,18 +8,22 @@ export default function Navbar() {
 
   return (
     <>
-      <div className="fixed left-0 top-0 z-[60] h-[3px] w-full bg-transparent">
+      <div
+        aria-hidden="true"
+        className="fixed left-0 top-0 z-[60] h-[3px] w-full bg-transparent"
+      >
         <div
           className="
-      h-full origin-left bg-accent
-      transition-transform duration-300 ease-out
-      will-change-transform
-    "
+            h-full origin-left bg-accent
+            transition-transform duration-300 ease-out
+            will-change-transform
+          "
           style={{ transform: `scaleX(${progress})` }}
         />
       </div>
 
       <nav
+        aria-label="Navegação principal"
         className={`
           fixed left-0 right-0 top-0 z-50
           flex items-center justify-between
@@ -38,11 +42,14 @@ export default function Navbar() {
       >
         <Link
           href="/"
+          aria-label="Ir para o início da página"
           className="
             font-heading text-xl font-medium tracking-[0.04em]
             text-text-primary no-underline
             transition-opacity duration-300
             hover:opacity-80
+            focus-visible:outline focus-visible:outline-2
+            focus-visible:outline-offset-4 focus-visible:outline-accent
           "
         >
           Frilic<span className="text-accent">.</span>
@@ -50,6 +57,7 @@ export default function Navbar() {
 
         <a
           href="#cta"
+          aria-label="Ir para a seção Próximo passo"
           className="
             hidden sm:inline-block
             bg-accent px-6 py-2.5
@@ -57,6 +65,8 @@ export default function Navbar() {
             text-background no-underline
             transition-[opacity,transform] duration-300 ease-out
             hover:-translate-y-0.5 hover:opacity-85
+            focus-visible:outline focus-visible:outline-2
+            focus-visible:outline-offset-4 focus-visible:outline-accent
           "
         >
           Falar com especialista

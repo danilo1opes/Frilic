@@ -4,17 +4,18 @@ export default function Problem() {
   return (
     <section
       id="problem"
-      className="border-b border-border py-20 lg:py-30 bg-background"
       data-section="problem"
+      aria-labelledby="problem-title"
+      className="border-b border-border bg-background py-20 lg:py-30"
     >
       <div className="mx-auto max-w-[1160px] px-6 lg:px-10">
-        {/*  Subtitle */}
         <p
           className="
             mb-5 flex items-center gap-3
             text-[10px] font-medium uppercase tracking-[0.2em]
             text-text-muted
-            before:block before:h-px before:w-5 before:bg-text-muted before:content-['']
+            before:block before:h-px before:w-5
+            before:bg-text-muted before:content-['']
           "
         >
           Reconhece essa situação?
@@ -22,13 +23,12 @@ export default function Problem() {
 
         <div className="grid gap-12 lg:grid-cols-2 lg:gap-20">
           <div>
-            {/* Title */}
             <h2
+              id="problem-title"
               className="
-                font-heading text-4xl font-light leading-wide
-                text-white
-                sm:text-5xl
-                lg:text-[58px]
+                font-heading text-4xl font-light
+                leading-[1.05] text-white
+                sm:text-5xl lg:text-[58px]
               "
             >
               Sua empresa é boa no que faz.
@@ -38,7 +38,6 @@ export default function Problem() {
               não chegam todo mês.
             </h2>
 
-            {/* Paragraph */}
             <div className="mt-8 space-y-6 font-body text-[17px] font-light leading-[1.8] text-text-secondary">
               <p>
                 Tem meses que o telefone toca bastante. Tem meses que
@@ -57,8 +56,8 @@ export default function Problem() {
               </p>
 
               <p>
-                Já tentou agência, já fez post no Instagram, talvez até anúncio
-                , mas nada virou um fluxo constante.{' '}
+                Já tentou agência, já fez post no Instagram, talvez até anúncio,
+                mas nada virou um fluxo constante.{' '}
                 <strong className="font-normal text-text-primary">
                   O problema não é falta de tentativa. É falta de método.
                 </strong>
@@ -66,11 +65,15 @@ export default function Problem() {
             </div>
           </div>
 
-          {/* Problems */}
-          <div className="flex flex-col gap-px bg-border">
+          <div
+            className="flex flex-col gap-px bg-border"
+            role="list"
+            aria-label="Principais problemas enfrentados pelas empresas"
+          >
             {problemItems.map((item) => (
-              <div
+              <article
                 key={item.number}
+                role="listitem"
                 className="
                   group relative flex gap-5 overflow-hidden
                   bg-surface px-8 py-7
@@ -79,6 +82,7 @@ export default function Problem() {
                 "
               >
                 <span
+                  aria-hidden="true"
                   className="
                     absolute left-0 top-0 h-full w-0.5
                     origin-bottom scale-y-0 bg-accent
@@ -87,7 +91,14 @@ export default function Problem() {
                   "
                 />
 
-                <span className="min-w-6 pt-0.5 font-heading text-sm font-light text-text-muted">
+                <span
+                  aria-label={`Problema ${item.number}`}
+                  className="
+                    min-w-6 pt-0.5
+                    font-heading text-sm font-light
+                    text-text-muted
+                  "
+                >
                   {item.number}
                 </span>
 
@@ -100,7 +111,7 @@ export default function Problem() {
                     {item.description}
                   </p>
                 </div>
-              </div>
+              </article>
             ))}
           </div>
         </div>
